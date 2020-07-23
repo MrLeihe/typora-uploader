@@ -10,7 +10,6 @@ for item in $@; do
     item=`echo "$item" | sed 's/%20/ /g'`
     # 上传结果
     result=`curl -H "Expect:" -F "file=@$item" https://cdn-ms.juejin.im/v1/upload\?bucket\=gold-user-assets`
-    echo "$result"
     # 添加图片 https 地址到数组，字符截取、去除双引号
     list[$index]=`echo $result | awk -F '"https":' '{ print $2 }' | awk -F '},' '{ print $1 }' | sed 's/\"//g'`
     # 更新下标
