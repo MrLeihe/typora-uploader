@@ -1,12 +1,12 @@
 ## Typora 自定义命令上传图片
 
-#### 声明！
+### 声明！
 
 <div style='color:#f00;'>
 本项目只可用于个人学习使用，任何商业行为与作者无关！
 </div>
 
-#### How to use
+### How to use
 
 将 bin 目录 `.sh` 文件复制到自己 pc 任意目录下，比如放到 `~/shell/`目录下，如果按文件名 `juejin-uploader`，则执行步骤为
 
@@ -39,12 +39,18 @@ $ chmod 777 juejin-uploader.sh
 
 ## 其它
 
-**已知问题**
+#### 图片路径含有空格等特殊字符时
 
-- 本地图片路径如果含有空格，在 `shell` 脚本里会被分隔当成两个文件路径处理，根据路径找不到文件，导致上传失败，这个暂时没有解决，本身这个在 `Typora` 那里就应该对路径（空格之类）进行转义
+本地图片路径如果含有空格，在 `shell` 脚本里会被分隔当成两个文件路径处理，根据路径找不到文件，导致上传失败。
 
-  > 例：Library/Application Support/typora-user-images/image-20200722101002334.png
-  >
-  > Application Support 目录本身含有空格
+> 例：Library/Application Support/typora-user-images/image-20200722101002334.png
+>
+> Application Support 目录本身含有空格
 
-遇到路径含有空格导致上传失败问题，可将图片在其他目录保存一份，再上传
+不过，好在 `Typora` 已经支持了对特殊字符转义的配置，允许在插入图片时自动对图片地址进行 `escape`，我们只要勾选上对应的配置，`shell`脚本在识别到含有转义字符时会进行相应处理
+
+如图：
+
+![image-20200723112945428](/Users/helei/Library/Application%20Support/typora-user-images/image-20200723112945428.png)
+
+更改配置后，即可上传成功 ✌️
