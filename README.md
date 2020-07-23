@@ -51,6 +51,6 @@ $ chmod 777 juejin-uploader.sh
 
 如图：
 
-![image-20200723112945428](/Users/helei/Library/Application%20Support/typora-user-images/image-20200723112945428.png)
+![image-20200723122404071](https://user-gold-cdn.xitu.io/2020/7/23/1737a93dc82bbae0?w=1360&h=938&f=png&s=132832)
 
 更改配置后，即可上传成功 ✌️
